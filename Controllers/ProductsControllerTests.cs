@@ -30,7 +30,7 @@ namespace ProductAPI.Tests
             SeedDatabase();
         }
 
-        // Method to seed the in-memory database with test
+        // Method to seed the in-memory database with test data
         private void SeedDatabase()
         {
             if (!_context.Products.Any())
