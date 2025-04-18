@@ -7,10 +7,9 @@ Features
 
 -  Add, update, delete, and fetch products
 -  Auto-generate unique 6-digit Product IDs
--  SQLite database (cross-platform, lightweight)
+-  SQLite database
 -  RESTful endpoints using ASP.NET Core Web API
 -  Endpoints to manage stock (add/decrement)
--  Clean architecture & coding practices
 -  EF Core migrations enabled
 -  Unit tests 
 	
@@ -22,15 +21,15 @@ Features
 - C#
 - Visual Studio Professional 2022
 - Git
+- Xunit
 
 
-
-| Method | Endpoint												| Description |
-|--------|--------------------------------------------------------------------|
-| POST   | `/api/products`		| Create a new product						  |
-| GET    | `/api/products`		| Get all products				              |
-| GET    | `/api/products/{id}` | Get product by ID                           |
-| PUT    | `/api/products/{id}` | Update product                              |
-| DELETE | `/api/products/{id}` | Delete product                              |
-| PUT    | `/api/products/decrement-stock/{id}/{quantity}`   | Decrease stock |
-| PUT    | `/api/products/add-to-stock/{id}/{quantity}`      | Increase stock |
+| Method | Endpoint												| Description		    |
+|--------|------------------------------------------------------------------------------|
+| POST   | `/api/products`										| Create a new product	|
+| GET    | `/api/products`										| Get all products	    |
+| GET    | `/api/products/{id}`									| Get product by ID     |
+| PUT    | `/api/products/{id}`									| Update product        |
+| DELETE | `/api/products/{id}`									| Delete product        |
+| PUT    | `/api/products/decrement-stock/{id}/{quantity}`		| Decrease stock        |
+| PUT    | `/api/products/add-to-stock/{id}/{quantity}`			| Increase stock        |
