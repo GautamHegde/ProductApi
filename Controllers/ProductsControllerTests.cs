@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Moq;
 using ProductApi.Data;
 using ProductAPI.Controllers;
 using ProductAPI.Models;
@@ -22,13 +23,19 @@ namespace ProductAPI.Tests
                 .UseInMemoryDatabase(databaseName: "TestDatabase")
                 .Options;
 
-            // Initialize the database context and controller
+            // Initialize the database context
             _context = new AppDbContext(options);
-            _controller = new ProductsController(_context);
+
+            // Create a mock logger
+            var mockLogger = new Mock<ILogger<ProductsController>>();
+
+            // Initialize the controller with the context and mock logger
+            _controller = new ProductsController(_context, mockLogger.Object);
 
             // Seed the database with initial test data
             SeedDatabase();
         }
+
 
         // Method to seed the in-memory database with test data
         private void SeedDatabase()
